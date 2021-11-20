@@ -167,6 +167,23 @@ $("html").keypress(function (element) {
 	processDOMChord(noteCode, userChordIds)
 	console.log(noteCode)
 })
+	
+function clearArray(array) {
+	while (array.length) {
+		array.pop();
+	}
+}
+
+//reset button, clear arrays, remove Pressed class
+$(".reset").click(function (){
+	$(".key").removeClass("pressed")
+	clearArray(userChordIds)
+	clearArray(noteCode)
+	processDOMChord(noteCode, userChordIds)
+
+	console.log(noteCode + " note")
+	console.log(userChordIds + " chord id ")
+})
 
 },{"./processDOMChord.js":7}],7:[function(require,module,exports){
 const sound = require('./sound.js')
